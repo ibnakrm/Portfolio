@@ -5,12 +5,12 @@
     --secondary-color: #01002167; /* pour les dots du carousel */
     --tertiary-color: #030050;
     --quaternary-color: #fff;
-    --logo: url('/CV OTHEMANE/images/logo-test-1.png');
-    --hover-logo: url('/CV OTHEMANE/images/logo-hover-test-1.png');
-    --exp-logo: url('/CV OTHEMANE/images/exp.png');
-    --exp-logo-hover: url('/CV OTHEMANE/images/exp-hover.png');
-    --diploma-logo: url('/CV OTHEMANE/images/form.png');
-    --diploma-logo-hover: url('/CV OTHEMANE/images/form-hover.png');
+    --logo: url('/images/logo-test-1.png');
+    --hover-logo: url('/images/logo-hover-test-1.png');
+    --exp-logo: url('/images/exp.png');
+    --exp-logo-hover: url('/images/exp-hover.png');
+    --diploma-logo: url('/images/form.png');
+    --diploma-logo-hover: url('/images/form-hover.png');
 }
 
 
