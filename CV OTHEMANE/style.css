@@ -95,18 +95,6 @@ h4:hover {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /*HEADER ET NAVBAR*/
 .container {
     width: 800px;
@@ -574,12 +562,12 @@ nav ul > li > a.active {
 
 .experiences > ul > li > .date > .job-details > .experiences-title > .job {
     font-size: 16px;
-    margin: 0;
+    margin-right: 5px;
     padding: 0;
     text-transform: uppercase;
     border: solid var(--quaternary-color) 1.5px;
     border-radius: 20px;
-    padding: 4px;
+    padding: 5px;
 }
 .experiences > ul > li > .date > .job-details > .experiences-title > .job:hover {
     border: solid var(--tertiary-color) 1.5px;
@@ -592,13 +580,20 @@ nav ul > li > a.active {
 
 .experiences > ul > li > .date > .job-details > .job-description {
     margin: 0;
-    padding: 8px 0px;
+    padding: 8px;
 }
 
 .experiences > ul > li > .date > .job-details > .job-description > a {
     color: var(--quaternary-color);
     font-size: 10px;
 }
+
+p.job-description {
+    margin-left: 50px;
+}
+
+
+
 
 
 
