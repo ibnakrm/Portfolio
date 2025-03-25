@@ -390,11 +390,23 @@ nav ul > li > a.active {
 .experiences ul li, .formations ul li {
     margin-bottom: 20px;
 }
-.job-date, .formation-date {
+
+/* Pour la date (Expériences) */
+.job-date {
     font-size: var(--font-size-small);
     font-weight: bold;
     margin-bottom: 5px;
 }
+/* Pour la date (Formations) */
+.formation-date {
+    font-size: var(--font-size-small);
+    font-weight: bold;
+    /* On retire la marge et on règle la hauteur de ligne 
+       pour rapprocher les années sur deux lignes */
+    margin: 0; 
+    line-height: 1.2;
+}
+
 .job {
     font-size: var(--font-size-base);
     font-weight: bold;
@@ -425,6 +437,13 @@ nav ul > li > a.active {
 }
 #diploma-icon:hover {
     background-image: var(--diploma-logo-hover);
+}
+
+/* Mise en ligne pour la section Formations */
+.formations .date {
+    display: flex;         /* On aligne tout sur une ligne */
+    align-items: center;   /* Centre verticalement */
+    gap: 15px;             /* Espace horizontal entre chaque bloc */
 }
 
 /* Contact */
