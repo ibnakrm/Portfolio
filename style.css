@@ -1,4 +1,4 @@
-/* variables pour le light mode et dark mmode*/
+/* variables pour le light mode et dark mode*/
 :root {
     --background-veil: #0d002c1a;
     --primary-color: #11003e34;
@@ -13,7 +13,6 @@
     --diploma-logo-hover: url('/images/form-hover.png');
 }
 
-
 body {
     background-color: #B5CCFF;
     margin: 0;
@@ -23,7 +22,6 @@ body {
     height: 100%;
 }
 
-
 main {
     display: flex;
     flex-direction: column; /* Aligner les éléments verticalement */
@@ -31,7 +29,6 @@ main {
     align-items: center; /* Centrer horizontalement les éléments */
     min-height: 73vh;
 }
-
 
 p {
     color: var(--quaternary-color);
@@ -41,40 +38,29 @@ p:hover {
     color: var(--tertiary-color);
 }
 
-
 h2 {
     color: var(--quaternary-color);
     margin-top: 0;
     margin-bottom: 20px;
-    text-transform: ;
     font-size: 24px;
 }
 h2:hover {
     color: var(--tertiary-color);
 }
 
-h3 {
+h3, h4 {
     color: var(--quaternary-color);
 }
-h3:hover {
+h3:hover, h4:hover {
     color: var(--tertiary-color);
 }
-
-h4 {
-    color: var(--quaternary-color);
-}
-h4:hover {
-    color: var(--tertiary-color);
-}
-
 
 /*Background*/
 .video-container {
     position: fixed;
-
-  }
+}
   
-  #videobackground {
+#videobackground {
     position: fixed;
     top: 0;
     left: 0;
@@ -82,18 +68,16 @@ h4:hover {
     height: 100%;
     object-fit: cover;
     z-index: -1;
-  }
+}
   
-  .color-overlay {
+.color-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--background-veil); /* Couleur et opacité du voile */
-  }
-
-
+    background-color: var(--background-veil);
+}
 
 /*HEADER ET NAVBAR*/
 .container {
@@ -105,45 +89,41 @@ header {
     background-color: var(--primary-color);
     backdrop-filter: blur(10px);
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    margin-bottom: 50px; /* distance qui separe du premier banner */
+    margin-bottom: 50px;
 }
 
-
-/* afin de ne pas ecraser les elements en bas avec la nav bar */
 header::after {
     content: '';
     display: table;
     clear: both;
 }
 
-/* 2 façon differentes pour afficher le logo */
 .logo-container {
     width: 100%;
     height: 100%;
     position: relative;
-  }
+}
   
 .logo {
     float: left;
     padding: 7px 2px;
-    margin: 10px 0px;
+    margin: 10px 0;
     width: 100px;
     height: 20px;
-    background-image: var(--logo); /* LOGO */
+    background-image: var(--logo);
     background-size: cover;
 }
 
 .logo:hover {
     background-image: var(--hover-logo);
-  }
-
+}
 
 nav {
     float: right;
 }
 
 nav ul {
-    display: inline-block; /*pour le switch mode*/
+    display: inline-block;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -153,35 +133,29 @@ nav li {
     display: inline-block;
     margin-left: 30px;
     padding-top: 17px;
-
     position: relative;
-
 }
 
 nav ul > li > a {
     color: var(--quaternary-color);
     text-decoration: none;
     font-size: 10px;
-    }
+}
 
 nav ul > li > a:hover {
     color: var(--tertiary-color);
     font-weight: bold;
 }
 
-
 nav ul > li > a::before {
     content: '';
     display: block;
     height: 3px;
     border-radius: 2px;
-    width: 100%;
+    width: 0%;
     background-color: var(--tertiary-color);
-
     position: absolute;
     top: 0;
-    width: 0%;
-
     transition: all ease-in-out 270ms;
 }
 
@@ -189,35 +163,17 @@ nav ul > li > a:hover::before {
     width: 100%;
 }
 
-
 nav ul > li > a.active {
-  /*  border: solid var(--tertiary-color) 1.5px; */
     padding: 5px;
     border-radius: 20px;
-    color: var(--quaternary-color);
     background: var(--tertiary-color);
     transition: all ease-in-out 270ms;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* banner avatar apres le header  */
+/* Banner avatar */
 .profile {
     width: 800px;
-    box-sizing: border-box;
-    margin: 0 auto;
-    margin: 25px 0 25px 0 ; /* distance qui separe les banners entre eux*/
+    margin: 25px auto;
     padding: 30px 40px;
     border-radius: 15px;
     backdrop-filter: blur(10px);
@@ -231,15 +187,12 @@ nav ul > li > a.active {
     align-items: center;
 }
 
-
-/*image avatar profil*/
 .avatar {
     width: 100px;
     height: 100px;
     margin: 5px;
     border: 3px solid var(--quaternary-color);
     border-radius: 100px;
-    position: relative;
     overflow: hidden;
 }
 
@@ -252,8 +205,6 @@ nav ul > li > a.active {
     height: auto;
     display: block;
 }
-
-
 
 .name {
     margin: 6px;
@@ -279,13 +230,11 @@ nav ul > li > a.active {
 }
 
 .sociallink ul > li > a > i {
-    padding: 0;
-    margin: 0;
     font-size: 15px;
-    color: var(--quaternary-color) ;
+    color: var(--quaternary-color);
 }
 .sociallink ul > li > a > i:hover {
-    color: var(--tertiary-color) ;
+    color: var(--tertiary-color);
 }
 
 .headerbuttons > a > button {
@@ -298,7 +247,7 @@ nav ul > li > a.active {
 
 .downloadbutton {
     color: var(--quaternary-color);
-    background-color: #00000000;
+    background-color: transparent;
     border: 2px solid var(--quaternary-color);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
@@ -321,97 +270,10 @@ nav ul > li > a.active {
     transition: all ease-in-out 270ms;
 }
 
-
-
-
-
-
-
-
-
-/* Banner à propos   */
-.propos {
-    display: flex;
+/* Sections bannière */
+.propos, .competences, .experiences, .formations, .contact {
     width: 800px;
-    box-sizing: border-box;
-    margin: 0 auto;
-    margin: 25px 0 25px 0 ; /* distance qui separe les banners entre eux*/
-    padding: 30px 40px;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    background-color: var(--primary-color);
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    transition: all ease-in-out 1000ms;
-}
-
-
-/* partie à gauche */
-.propos > .row {
-    padding: 0;
-    margin: 0;
-    flex-basis: 50%;
-}
-
-.bio {
-    text-align: justify;
-    padding-right: 40px;
-}
-
-
-/* partie à droite */
-.propos > .row > .row-icon-list > ul {
-    color: var(--quaternary-color);
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.propos > .row > .row-icon-list > ul > li {
-    display: flex;
-    align-items: center;
-    padding: 0;
-    margin: 10px 0px;
-}
-
-.propos > .row > .row-icon-list > ul > li > i {
-    padding: 0;
-    margin: 0;
-    font-size: 9px;
-    color: var(--quaternary-color);
-}
-.propos > .row > .row-icon-list > ul > li > i:hover {
-    color: var(--tertiary-color);
-}
-
-.propos > .row > .row-icon-list > ul > li > .titre-infos {
-    flex-basis: 40%;
-    padding-left: 10px;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-.infos-coordonnees {
-    color: var(--quaternary-color);
-    text-decoration: none;
-    font-size: 10px;
-    flex-basis: 100%;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-.infos-coordonnees:hover {
-    color: var(--tertiary-color);
-}
-
-
-
-
-
-/* banner Mes Competences */
-.competences, .experiences, .formations, .contact {
-    width: 800px;
-    box-sizing: border-box;
-    margin: 0 auto;
-    margin: 25px 0 25px 0 ; /* distance qui separe les banners entre eux*/
+    margin: 25px auto;
     padding: 30px 40px;
     border-radius: 15px;
     backdrop-filter: blur(10px);
@@ -424,312 +286,61 @@ nav ul > li > a.active {
     transition: all ease-in-out 300ms;
 }
 
-
-
-/* row contenant le partie gauche et droite */
+/* Compétences */
 .competences > .language-icon-section {
-    padding: 0px 0px;
     display: flex;
 }
-
-
-/* partie à gauche */
 .competences > .language-icon-section > .language-icon-list {
     flex-basis: 50%;
-    box-sizing: border-box;
     padding: 0 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
-
-.competences > .language-icon-section > .language-icon-list > ul {
+.competences > .language-icon-section > .language-icon-list ul {
     margin: 0;
     padding: 0;
-    flex-basis: 50%;
 }
-
-.competences > .language-icon-section > .language-icon-list > ul > li {
+.competences > .language-icon-section > .language-icon-list ul > li {
     list-style: none;
     display: inline-block;
     text-align: center;
     width: 80px;
 }
-
-.competences > .language-icon-section > .language-icon-list > ul > li > .language-icon-title {
-    padding: 0;
-    margin: 10px 0;
-}
-
-.competences > .language-icon-section > .language-icon-list > ul > li > .language-icon {
+.competences > .language-icon-section > .language-icon-list ul > li > .language-icon {
     width: 35px;
 }
 
-
-/* partie à droite */
-.competences > .language-icon-section > .competences-list  {
-    margin: 0;
-    padding: 0;
-}
-
-
-.competences > .language-icon-section > .competences-list > ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.competences > .language-icon-section > .competences-list > ul > li {
-    padding: 0;
-    margin: 0;
-    padding: 7px 0px;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-}
-
-.competences > .language-icon-section > .competences-list > ul > li > i {
-    color: var(--quaternary-color);
-    font-size: 13px;
-}
-.competences > .language-icon-section > .competences-list > ul > li > i:hover {
-    color: var(--tertiary-color);
-}
-
-
-.competences > .language-icon-section > .competences-list > ul > li > .liste-competences {
-    padding-left: 10px;
-    margin-top: 0;
-    margin-bottom: 0;
-    text-transform: lowercase;
-}
-
-
-
-
-
-
-/* baner Mes Exeperiences */
-.experiences > ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.experiences > ul > li {
-    margin: 0;
-    padding: 15px 0px;
-}
-
-.experiences > ul > li > .date {
-    display: flex;
-    align-items: flex-start;
-}
-
-.experiences > ul > li > .date > .job-date {
-    font-size: 7px;
-    margin: 0;
-    padding-top: 5px;
-}
-
-.experiences > ul > li > .date > .exp-icon {
-    background-image: var(--exp-logo);
-    border: solid var(--quaternary-color) 1.5px;
-    border-radius: 50%;
-    padding: 12px;
-    margin: 0px 10px 0px 10px;
-    background-size: 15px;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-.experiences > ul > li > .date > .exp-icon:hover {
-    background-image: var(--exp-logo-hover);
-    border: solid var(--tertiary-color) 1.5px;
-}
-
-.experiences > ul > li > .date > .job-details {
-    padding-top: 0px;
-}
-
-.experiences > ul > li > .date > .job-details > .experiences-title {
-    display: flex;
-    align-items: flex-end;
-    margin: 0;
-    padding: 0;
-    padding-bottom: 5px;
-}
-
-.experiences > ul > li > .date > .job-details > .experiences-title > .job {
-    font-size: 16px;
-    margin-right: 5px;
-    padding: 0;
-    text-transform: uppercase;
-    border: solid var(--quaternary-color) 1.5px;
-    border-radius: 20px;
-    padding: 5px;
-}
-.experiences > ul > li > .date > .job-details > .experiences-title > .job:hover {
-    border: solid var(--tertiary-color) 1.5px;
-}
-
-.experiences > ul > li > .date > .job-details > .experiences-title > .job-workplace {
-    margin: 0;
-    padding: 0 0 9px 10px;
-}
-
-.experiences > ul > li > .date > .job-details > .job-description {
-    margin: 0;
-    padding: 8px;
-}
-
-.experiences > ul > li > .date > .job-details > .job-description > a {
-    color: var(--quaternary-color);
-    font-size: 10px;
-}
-
-p.job-description {
-    margin-left: 50px;
-}
-
-
-
-
-
-
-
-/* baner Mes Formations */
-.formations > ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0px;
-}
-
-.formations > ul > li {
-    margin: 0;
-    padding: 15px 0px;
-}
-
-.formations > ul > li > .date {
-    display: flex;
-    align-items: flex-start;
-}
-
-.formations > ul > li > .date > .formation-date {
-    font-size: 7px;
-    margin: 0;
-    padding-top: 5px;
-}
-
-.formations > ul > li > .date > .diploma-icon {
-    background-image: var(--diploma-logo);
-    border: solid var(--quaternary-color) 1.5px;
-    border-radius: 50%;
-    padding: 12px;
-    margin: 0px 10px 0px 10px;
-    background-size: 15px;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-.formations > ul > li > .date > .diploma-icon:hover {
-    background-image: var(--diploma-logo-hover);
-    border: solid var(--tertiary-color) 1.5px;
-}
-
-.formations > ul > li > .date > .formation-details {
-    padding-top: 0px;
-}
-
-.formations > ul > li > .date > .formation-details > .formation-title {
-    display: flex;
-    align-items: flex-end;
-    margin: 0;
-    padding: 0;
-    padding-bottom: 5px;
-}
-
-.formations > ul > li > .date > .formation-details > .formation-title > .disploma {
-    font-size: 16px;
-    margin: 0;
-    padding: 0;
-    text-transform: uppercase;
-    border: solid var(--quaternary-color) 1.5px;
-    border-radius: 20px;
-    padding: 4px;
-}
-.formations > ul > li > .date > .formation-details > .formation-title > .disploma:hover {
-    border: solid var(--tertiary-color) 1.5px;
-}
-
-
-.formations > ul > li > .date > .formation-details > .formation-title > .academy {
-    margin: 0;
-    padding: 0 0 9px 10px;
-}
-
-.formations > ul > li > .date > .formation-details > .formation-description {
-    margin: 0;
-    padding: 8px 0px;
-}
-
-
-
-
-
-
-
-
-
-
-/* baner Contactez-moi! */
+/* Contact */
 .contact > .contact-form-section {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     display: flex;
 }
-
 .contact > .contact-form-section > form {
-    margin: 0;
-    padding: 0;
     width: 40%;
 }
-
-.contact > .contact-form-section > form > ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+.contact > .contact-form-section > form ul {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 300px;
 }
-
-.contact > .contact-form-section > form > ul > li > input, #message {
+.contact > .contact-form-section > form ul > li > input,
+#message {
     margin: 0 20px 0 0;
     padding: 5px;
     width: 100%;
     border-radius: 3px;
     border: 2px solid var(--quaternary-color);
     color: var(--quaternary-color);
-    box-sizing: border-box;
-    background-color: #03005000;
+    background-color: transparent;
     font-family: 'Ubuntu Mono', monospace;
 }
-.contact > .contact-form-section > form > ul > li > input:hover, #message:hover {
+.contact > .contact-form-section > form ul > li > input:hover,
+#message:hover {
     border: 2px solid var(--tertiary-color);
 }
-
-.contact > .contact-form-section > form > ul > li > #message {
-    max-height: 150px;
-    min-height: 150px;
-    max-width: 100%;
-    min-width: 100%;
-}
-
-.contact > .contact-form-section > form > ul > li > button {
-    margin: 0;
-    padding: 5px;
+.contact > .contact-form-section > form ul > li > button {
+    padding: 10px 15px;
     width: 100%;
     color: var(--tertiary-color);
     background-color: var(--quaternary-color);
@@ -739,85 +350,101 @@ p.job-description {
     text-transform: uppercase;
     font-weight: bold;
     border-radius: 3px;
-    padding: 10px 15px;
 }
-.contact > .contact-form-section > form > ul > li > button:hover {
+.contact > .contact-form-section > form ul > li > button:hover {
     color: var(--quaternary-color);
     background-color: var(--tertiary-color);
     border: 2px solid var(--tertiary-color);
     transition: all ease-in-out 270ms;
 }
-
 .contact > .contact-form-section > .google-map {
     margin: 0 0 10px 20px;
-    padding: 0;
     height: 300px;
     width: 60%;
-    box-sizing: border-box;
     border-radius: 10px;
     overflow: hidden;
 }
 
-
-
-
-
 /* Footer */
 footer {
     width: 100%;
-    box-sizing: border-box;
-    margin: 0 auto;
-    margin-top: 50px; /* distance qui separe du premier banner*/
-    padding: 10px 0px;
+    margin-top: 50px;
+    padding: 10px 0;
     backdrop-filter: blur(10px);
     background-color: var(--primary-color);
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
-
 .logo-container-footer {
-    box-sizing: border-box;
     width: 100%;
     height: 100%;
     margin-top: 10px;
 }
-
 .logo-footer {
-    float: center;
     padding: 7px 2px;
-    margin-top: 0px;
-    margin: 10px 0px;
+    margin: 10px 0;
     width: 100px;
     height: 20px;
     background-image: var(--logo);
     background-size: cover;
     display: table-cell;
 }
-
 .logo-footer:hover {
     background-image: var(--hover-logo);
 }
-
 .sociallink-footer ul {
-    margin: 0;
-    padding: 0;
     padding-top: 10px;
 }
-
 .sociallink-footer ul > li {
-    list-style: none;
     display: inline-block;
-    margin: 0px 5px;
-    margin-bottom: 5px;
-
+    margin: 0 5px 5px;
 }
-
 .sociallink-footer ul > li > a > i {
-    padding: 0;
-    margin: 0;
     font-size: 15px;
-    color: var(--quaternary-color) ;
+    color: var(--quaternary-color);
 }
 .sociallink-footer ul > li > a > i:hover {
-    color: var(--tertiary-color) ;
+    color: var(--tertiary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+    .container,
+    .profile,
+    .propos,
+    .competences,
+    .experiences,
+    .formations,
+    .contact {
+        width: 100%;
+        padding: 20px;
+        margin: 10px 0;
+    }
+    
+    header, footer {
+        width: 100%;
+    }
+    
+    nav ul {
+        display: block;
+        text-align: center;
+    }
+    
+    nav li {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    .competences > .language-icon-section {
+        flex-direction: column;
+    }
+    
+    .contact > .contact-form-section {
+        flex-direction: column;
+    }
+    
+    .contact > .contact-form-section > form,
+    .contact > .contact-form-section > .google-map {
+        width: 100%;
+    }
 }
