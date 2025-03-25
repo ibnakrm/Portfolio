@@ -1,8 +1,8 @@
-/* variables pour le light mode et dark mode*/
+/* Variables */
 :root {
     --background-veil: #0d002c1a;
     --primary-color: #11003e34;
-    --secondary-color: #01002167; /* pour les dots du carousel */
+    --secondary-color: #01002167; 
     --tertiary-color: #030050;
     --quaternary-color: #fff;
     --logo: url('/images/logo-test-1.png');
@@ -13,65 +13,58 @@
     --diploma-logo-hover: url('/images/form-hover.png');
 }
 
+/* Base */
 body {
     background-color: #B5CCFF;
     margin: 0;
     padding: 0;
+    /* Police plus grande et line-height plus confortable */
     font-family: 'Ubuntu Mono', monospace;
-    font-weight: 300;
-    height: 100%;
-}
-
-main {
-    display: flex;
-    flex-direction: column; /* Aligner les éléments verticalement */
-    justify-content: center; /* Centrer verticalement les éléments */
-    align-items: center; /* Centrer horizontalement les éléments */
-    min-height: 73vh;
-}
-
-p {
+    font-size: 16px;
+    line-height: 1.5;
     color: var(--quaternary-color);
-    font-size: 10px;
-}
-p:hover {
-    color: var(--tertiary-color);
 }
 
+/* Container global pour desktop */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+    padding: 0;
+    color: var(--quaternary-color);
+}
 h2 {
-    color: var(--quaternary-color);
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
 }
-h2:hover {
-    color: var(--tertiary-color);
+p {
+    margin: 0.5rem 0;
 }
-
-h3, h4 {
+a {
+    text-decoration: none;
     color: var(--quaternary-color);
 }
-h3:hover, h4:hover {
-    color: var(--tertiary-color);
-}
 
-/*Background*/
+/* Background vidéo */
 .video-container {
-    position: fixed;
-}
-  
-#videobackground {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
     z-index: -1;
 }
-  
+#videobackground {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 .color-overlay {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -79,288 +72,244 @@ h3:hover, h4:hover {
     background-color: var(--background-veil);
 }
 
-/*HEADER ET NAVBAR*/
-.container {
-    width: 800px;
-    margin: 0 auto;
-}
-
+/* Header */
 header {
     background-color: var(--primary-color);
     backdrop-filter: blur(10px);
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    margin-bottom: 50px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
+    width: 100%;
 }
-
 header::after {
     content: '';
     display: table;
     clear: both;
 }
-
 .logo-container {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-  
-.logo {
     float: left;
-    padding: 7px 2px;
-    margin: 10px 0;
+}
+.logo {
+    margin: 10px;
     width: 100px;
     height: 20px;
     background-image: var(--logo);
     background-size: cover;
 }
-
 .logo:hover {
     background-image: var(--hover-logo);
 }
-
 nav {
     float: right;
 }
-
 nav ul {
-    display: inline-block;
     margin: 0;
     padding: 0;
     list-style: none;
+    display: flex;
+    align-items: center;
 }
-
 nav li {
-    display: inline-block;
     margin-left: 30px;
-    padding-top: 17px;
-    position: relative;
+    padding: 15px 0;
 }
-
-nav ul > li > a {
+nav li a {
+    font-size: 1rem;
     color: var(--quaternary-color);
-    text-decoration: none;
-    font-size: 10px;
+    transition: color 0.2s;
 }
-
-nav ul > li > a:hover {
+nav li a:hover {
     color: var(--tertiary-color);
     font-weight: bold;
 }
 
-nav ul > li > a::before {
-    content: '';
-    display: block;
-    height: 3px;
-    border-radius: 2px;
-    width: 0%;
-    background-color: var(--tertiary-color);
-    position: absolute;
-    top: 0;
-    transition: all ease-in-out 270ms;
-}
-
-nav ul > li > a:hover::before {
+/* Bannières (profile, propos, competences, etc.) */
+.profile, .propos, .competences, .experiences, .formations, .contact {
+    max-width: 800px;
     width: 100%;
-}
-
-nav ul > li > a.active {
-    padding: 5px;
-    border-radius: 20px;
-    background: var(--tertiary-color);
-    transition: all ease-in-out 270ms;
-}
-
-/* Banner avatar */
-.profile {
-    width: 800px;
     margin: 25px auto;
     padding: 30px 40px;
     border-radius: 15px;
     backdrop-filter: blur(10px);
     background-color: var(--primary-color);
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    border: 1px solid #00000008;
-    transition: all ease-in-out 1000ms;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center;
+    box-shadow: 0 0 25px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+}
+.profile:hover, .propos:hover, .competences:hover, 
+.experiences:hover, .formations:hover, .contact:hover, 
+header:hover, footer:hover {
+    backdrop-filter: blur(30px);
 }
 
+/* Profil */
+.profile {
+    text-align: center;
+}
 .avatar {
-    width: 100px;
-    height: 100px;
-    margin: 5px;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 10px;
     border: 3px solid var(--quaternary-color);
-    border-radius: 100px;
+    border-radius: 50%;
     overflow: hidden;
 }
-
 .avatar:hover {
-    border: 3px solid var(--tertiary-color);
+    border-color: var(--tertiary-color);
 }
-
 .avatar img {
     width: 100%;
     height: auto;
     display: block;
 }
-
 .name {
-    margin: 6px;
-    font-size: 20px;
-    color: var(--quaternary-color);
+    font-size: 1.5rem;
+    margin: 10px 0;
 }
-.name:hover {
-    color: var(--tertiary-color);
-}
-
 .jobtitle {
-    margin: 5px;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
 }
-
 .sociallink ul {
-    margin: 12px;
     padding: 0;
-}
-
-.sociallink ul > li {
+    margin: 0 auto;
     list-style: none;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
-
-.sociallink ul > li > a > i {
-    font-size: 15px;
-    color: var(--quaternary-color);
+.sociallink ul li i {
+    font-size: 1.5rem;
 }
-.sociallink ul > li > a > i:hover {
-    color: var(--tertiary-color);
+.headerbuttons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
-
-.headerbuttons > a > button {
-    font-size: 9px;
+.downloadbutton, .hirebutton {
+    font-size: 0.9rem;
     text-transform: uppercase;
     font-weight: bold;
     border-radius: 3px;
     padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.3s;
 }
-
 .downloadbutton {
-    color: var(--quaternary-color);
     background-color: transparent;
+    color: var(--quaternary-color);
     border: 2px solid var(--quaternary-color);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
-.hirebutton {
-    color: var(--tertiary-color);
-    background-color: var(--quaternary-color);
-    border: 2px solid var(--tertiary-color);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-}
-
 .downloadbutton:hover {
     background-color: var(--tertiary-color);
+    border-color: var(--tertiary-color);
+    color: var(--quaternary-color);
+}
+.hirebutton {
+    background-color: var(--quaternary-color);
+    color: var(--tertiary-color);
     border: 2px solid var(--tertiary-color);
-    transition: all ease-in-out 270ms;
 }
 .hirebutton:hover {
-    color: var(--quaternary-color);
     background-color: var(--tertiary-color);
-    border: 2px solid var(--tertiary-color);
-    transition: all ease-in-out 270ms;
-}
-
-/* Sections bannière */
-.propos, .competences, .experiences, .formations, .contact {
-    width: 800px;
-    margin: 25px auto;
-    padding: 30px 40px;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    background-color: var(--primary-color);
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    transition: all ease-in-out 300ms;
-}
-.profile:hover, .propos:hover, .competences:hover, .experiences:hover, .formations:hover, .contact:hover, header:hover, footer:hover {
-    backdrop-filter: blur(30px);
-    transition: all ease-in-out 300ms;
+    color: var(--quaternary-color);
 }
 
 /* Compétences */
-.competences > .language-icon-section {
+.language-icon-section {
     display: flex;
+    gap: 20px;
 }
-.competences > .language-icon-section > .language-icon-list {
-    flex-basis: 50%;
-    padding: 0 20px;
+.language-icon-list ul {
+    display: flex;
+    flex-wrap: wrap; /* permet de revenir à la ligne */
+    gap: 30px;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.language-icon-list li {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-.competences > .language-icon-section > .language-icon-list ul {
-    margin: 0;
-    padding: 0;
-}
-.competences > .language-icon-section > .language-icon-list ul > li {
-    list-style: none;
-    display: inline-block;
-    text-align: center;
     width: 80px;
 }
-.competences > .language-icon-section > .language-icon-list ul > li > .language-icon {
-    width: 35px;
+.language-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+.icon-label {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+.competences-list ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.competences-list ul li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0;
+}
+.competences-list ul li i {
+    font-size: 1.2rem;
+}
+.liste-competences {
+    font-size: 1rem;
 }
 
 /* Contact */
-.contact > .contact-form-section {
+.contact-form-section {
     display: flex;
+    gap: 20px;
 }
-.contact > .contact-form-section > form {
+.contact-form-section form {
     width: 40%;
 }
-.contact > .contact-form-section > form ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 300px;
+.contact-form-section form ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
-.contact > .contact-form-section > form ul > li > input,
-#message {
-    margin: 0 20px 0 0;
-    padding: 5px;
+.contact-form-section form ul li {
+    margin-bottom: 15px;
+}
+.contact-form-section form input,
+.contact-form-section form textarea {
     width: 100%;
-    border-radius: 3px;
+    padding: 10px;
+    border-radius: 4px;
     border: 2px solid var(--quaternary-color);
-    color: var(--quaternary-color);
     background-color: transparent;
-    font-family: 'Ubuntu Mono', monospace;
-}
-.contact > .contact-form-section > form ul > li > input:hover,
-#message:hover {
-    border: 2px solid var(--tertiary-color);
-}
-.contact > .contact-form-section > form ul > li > button {
-    padding: 10px 15px;
-    width: 100%;
-    color: var(--tertiary-color);
-    background-color: var(--quaternary-color);
-    border: 2px solid var(--tertiary-color);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    font-size: 9px;
-    text-transform: uppercase;
-    font-weight: bold;
-    border-radius: 3px;
-}
-.contact > .contact-form-section > form ul > li > button:hover {
     color: var(--quaternary-color);
-    background-color: var(--tertiary-color);
-    border: 2px solid var(--tertiary-color);
-    transition: all ease-in-out 270ms;
+    font-size: 1rem;
 }
-.contact > .contact-form-section > .google-map {
-    margin: 0 0 10px 20px;
-    height: 300px;
+.contact-form-section form input:hover,
+.contact-form-section form textarea:hover {
+    border-color: var(--tertiary-color);
+}
+.contact-form-section form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: var(--quaternary-color);
+    color: var(--tertiary-color);
+    border: 2px solid var(--tertiary-color);
+    border-radius: 4px;
+    cursor: pointer;
+}
+.contact-form-section form button:hover {
+    background-color: var(--tertiary-color);
+    color: var(--quaternary-color);
+}
+.google-map {
     width: 60%;
+    height: 300px;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -368,83 +317,70 @@ nav ul > li > a.active {
 /* Footer */
 footer {
     width: 100%;
-    margin-top: 50px;
-    padding: 10px 0;
     backdrop-filter: blur(10px);
     background-color: var(--primary-color);
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 25px rgba(0,0,0,0.2);
     text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
 }
 .logo-container-footer {
-    width: 100%;
-    height: 100%;
-    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .logo-footer {
-    padding: 7px 2px;
-    margin: 10px 0;
     width: 100px;
     height: 20px;
+    margin: 0 auto;
     background-image: var(--logo);
     background-size: cover;
-    display: table-cell;
 }
 .logo-footer:hover {
     background-image: var(--hover-logo);
 }
 .sociallink-footer ul {
-    padding-top: 10px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
 }
-.sociallink-footer ul > li {
-    display: inline-block;
-    margin: 0 5px 5px;
-}
-.sociallink-footer ul > li > a > i {
-    font-size: 15px;
+.sociallink-footer ul li i {
+    font-size: 1.5rem;
     color: var(--quaternary-color);
 }
-.sociallink-footer ul > li > a > i:hover {
+.sociallink-footer ul li i:hover {
     color: var(--tertiary-color);
 }
 
-/* Responsive Design */
-@media (max-width: 800px) {
-    .container,
-    .profile,
-    .propos,
-    .competences,
-    .experiences,
-    .formations,
-    .contact {
-        width: 100%;
-        padding: 20px;
-        margin: 10px 0;
+/* Responsive */
+@media (max-width: 900px) {
+    body {
+        font-size: 15px;
     }
-    
-    header, footer {
-        width: 100%;
-    }
-    
     nav ul {
-        display: block;
-        text-align: center;
+        flex-direction: column;
+        align-items: center;
     }
-    
     nav li {
-        display: block;
-        margin: 10px 0;
+        margin-left: 0;
     }
-    
-    .competences > .language-icon-section {
+    .contact-form-section {
         flex-direction: column;
     }
-    
-    .contact > .contact-form-section {
-        flex-direction: column;
-    }
-    
-    .contact > .contact-form-section > form,
-    .contact > .contact-form-section > .google-map {
+    .contact-form-section form,
+    .google-map {
         width: 100%;
+    }
+}
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    .headerbuttons {
+        flex-direction: column;
+    }
+    .language-icon-list ul {
+        gap: 20px;
     }
 }
