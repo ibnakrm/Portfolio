@@ -156,7 +156,7 @@ export const hardSkillsDetails: HardSkillDetail[] = [
   {
     title: "Make",
     level: "avancé",
-    context: "Make est l’un des outils que j’ai le plus utilisés en alternance. J’ai conçu et maintenu des scénarios pour connecter des outils, automatiser des processus, structurer des données et intégrer de l’IA dans des workflows.",
+    context: "Make est l’un des outils que j’ai le plus utilisés en alternance. J’ai conçu et maintenu des scénarios pour connecter des outils, automatiser des processus, structurer des données et intégrer de l’IA dans des workflows. J'ai également obtenu les certifications officielles Make.com et Make Partner (Niveau 4), et je prépare actuellement le niveau 5 Expert.",
     todo: [
       "créer des scénarios multi-étapes ;",
       "connecter des APIs ;",
