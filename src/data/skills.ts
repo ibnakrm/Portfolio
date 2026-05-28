@@ -11,7 +11,7 @@ export const skillCategories: SkillCategory[] = [
     label: "Data & BI",
     icon: "BarChart3",
     skills: [
-      "SQL", "PostgreSQL", "MariaDB / MySQL", "Power BI",
+      "SQL", "PostgreSQL", "MariaDB / MySQL", "Power BI", "ETL",
       "ClicData", "Coupler", "Data cleaning", "Data modeling",
       "Reporting", "KPIs", "Recette de données"
     ]
