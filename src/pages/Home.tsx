@@ -152,8 +152,9 @@ export default function Home() {
                 </Link>
                 <a
                   id="cta-cv"
-                  href="/documents/Khachnane Othemane CV.pdf"
-                  download
+                  href="/cv.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn-outline"
                   style={{ fontSize: '0.85rem', padding: '10px 22px' }}
                 >

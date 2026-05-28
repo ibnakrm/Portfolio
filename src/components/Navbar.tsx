@@ -86,8 +86,9 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href="/documents/Khachnane Othemane CV.pdf"
-            download
+            href="/cv.html"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-primary"
             style={{ marginLeft: '8px', padding: '7px 16px', fontSize: '0.8125rem' }}
           >
@@ -141,8 +142,9 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href="/documents/Khachnane Othemane CV.pdf"
-            download
+            href="/cv.html"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-primary"
             style={{ marginTop: '16px', width: '100%', justifyContent: 'center' }}
           >

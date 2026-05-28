@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OTHEMANE KHACHNANE | CV</title>
+    <meta name="description" content="CV OTHEMANE KHACHNANE" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <style>
+:root {
+  color-scheme: light;
+  --ink: #111827;
+  --muted: #4b5563;
+  --line: #e5e7eb;
+  --soft: #f3f4f6;
+  --accent: #1e3a8a;
+  --white: #ffffff;
+  --page-bg: #f9fafb;
+  --font-sans: "Inter", "Avenir Next", "Segoe UI", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  line-height: 1.4;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.page-shell {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.page {
+  background: var(--white);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 297mm;
+  overflow: hidden;
+  width: 210mm;
+}
+
+.page-header {
+  border-bottom: 1px solid var(--line);
+  padding: 8mm 15mm 4.5mm;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0 0 3px;
+  text-transform: uppercase;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 8.5px;
+  margin: 0;
+}
+
+.document {
+  flex: 1;
+  min-height: 0;
+}
+
+.doc-cv .page-header,
+.doc-lm .page-header {
+  display: none;
+}
+
+.doc-cv .document {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 0;
+}
+
+.header {
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  padding: 6mm 10mm 3.5mm;
+}
+
+.header h1 {
+  color: var(--accent);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  margin: 0 0 2px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: var(--ink);
+  font-size: 10.5px;
+  font-weight: 600;
+  margin-bottom: 1px;
+}
+
+.target {
+  color: var(--accent);
+  font-size: 9.5px;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.contact {
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 8.5px;
+  gap: 2px 8px;
+}
+
+.contact span {
+  align-items: center;
+  display: flex;
+  gap: 6px;
+}
+
+.contact span:not(:last-child)::after {
+  color: var(--line);
+  content: "•";
+}
+
+.content {
+  display: grid;
+  flex: 1;
+  gap: 6mm;
+  grid-template-columns: 52mm 1fr;
+  min-height: 0;
+  padding: 3.5mm 10mm 4mm;
+}
+
+.sidebar,
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.sidebar {
+  gap: 2.5mm;
+}
+
+.main {
+  gap: 3mm;
+}
+
+.section {
+  page-break-inside: avoid;
+}
+
+.section-title {
+  border-bottom: 1px solid var(--line);
+  color: var(--accent);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin: 0 0 2mm;
+  padding-bottom: 1mm;
+  text-transform: uppercase;
+}
+
+.profile {
+  color: var(--muted);
+  font-size: 8.2px;
+  line-height: 1.42;
+  margin: 0 0 1mm;
+  text-align: justify;
+}
+
+.profile:last-child {
+  margin-bottom: 0;
+}
+
+.skill-group {
+  margin-bottom: 2.5mm;
+}
+
+.skill-group:last-child {
+  margin-bottom: 0;
+}
+
+.skill-title {
+  color: var(--ink);
+  font-size: 8.2px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.chip {
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  color: var(--ink);
+  font-size: 7.5px;
+  font-weight: 500;
+  padding: 2px 5px;
+}
+
+.compact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fix: when build generates <p class="compact-list"> instead of <ul> */
+p.compact-list {
+  font-size: 8.2px;
+  line-height: 1.42;
+  color: var(--muted);
+  margin: 0;
+}
+
+.compact-list li {
+  color: var(--muted);
+  font-size: 8.2px;
+  line-height: 1.35;
+  margin-bottom: 0.8mm;
+  padding-left: 9px;
+  position: relative;
+}
+
+.compact-list li:last-child {
+  margin-bottom: 0;
+}
+
+.compact-list li::before {
+  color: var(--accent);
+  content: "•";
+  font-size: 9px;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.compact-list strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.xp {
+  margin-bottom: 3mm;
+  page-break-inside: avoid;
+}
+
+.xp:last-child {
+  margin-bottom: 0;
+}
+
+.xp-head {
+  align-items: flex-start;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.xp-role {
+  color: var(--ink);
+  font-size: 9.5px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.xp-date {
+  color: var(--muted);
+  flex-shrink: 0;
+  font-size: 7.8px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-top: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.xp-company {
+  color: var(--accent);
+  font-size: 8.5px;
+  font-weight: 600;
+  margin-bottom: 1mm;
+}
+
+.xp-context {
+  color: var(--muted);
+  font-size: 8px;
+  font-style: italic;
+  margin-bottom: 1.2mm;
+}
+
+.impact {
+  background: var(--soft);
+  border-left: 2px solid var(--accent);
+  border-radius: 0 3px 3px 0;
+  color: var(--ink);
+  font-size: 8px;
+  margin-top: 1.5mm;
+  padding: 1.5mm 2.5mm;
+}
+
+.impact strong {
+  font-weight: 700;
+}
+
+.doc-lm .document {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 0;
+}
+
+.letter-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 15mm 20mm;
+}
+
+.letter-body {
+  color: var(--ink);
+  font-size: 10.5px;
+  line-height: 1.6;
+  margin-top: 5mm;
+  text-align: justify;
+}
+
+.letter-body p {
+  color: var(--muted);
+  margin: 0 0 4.5mm;
+}
+
+.letter-body p:last-child {
+  margin-bottom: 0;
+}
+
+.signature {
+  color: var(--ink);
+  margin-top: 15mm;
+}
+
+.signature-name {
+  font-size: 11.5px;
+  font-weight: 700;
+}
+
+.signature-line {
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 500;
+  margin-top: 2mm;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+code {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 0.94em;
+}
+
+@media (max-width: 960px) {
+  .page-shell {
+    padding: 12px;
+  }
+
+  .page {
+    box-shadow: none;
+    height: auto;
+    min-height: 297mm;
+    width: 100%;
+  }
+
+  .content {
+    gap: 8mm;
+    grid-template-columns: 1fr;
+  }
+
+  .header,
+  .content,
+  .page-header,
+  .letter-content {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+@media print {
+  @page {
+    margin: 0;
+    size: A4;
+  }
+
+  html, body {
+    width: 210mm;
+    height: 297mm;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: var(--white);
+  }
+
+  .page-shell {
+    padding: 0;
+    height: 100%;
+  }
+
+  .page {
+    box-shadow: none;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+    </style>
+  </head>
+  <body class="theme-reference doc-cv">
+    <main class="page-shell">
+      <article class="page">
+        <header class="page-header">
+        <p class="eyebrow">CV</p>
+        <p class="meta">cv-generique · cv_generique</p>
+        </header>
+        <section class="document">
+<header class="header header-no-photo">
+  <div class="identity identity-full">
+    <h1>OTHEMANE KHACHNANE</h1>
+    <div class="subtitle">Alternant Full Stack, Data &amp; Automatisation IA</div>
+    <div class="target">Recherche alternance Data &amp; IA appliquée — août 2026</div>
+    <div class="contact">
+      <span>Villeneuve-d’Ascq / Lille, France</span><span>+33 7 49 65 27 82</span><span>khachnaneothemane@gmail.com</span><span>linkedin.com/in/othemane-khachnane-5230b0264</span>
+    </div>
+  </div>
+</header>
+<section class="content">
+  <aside class="sidebar">
+    <section class="section">
+  <h2 class="section-title">PROFIL</h2>
+  <p class="profile">Étudiant en BUT Informatique actuellement en alternance, je travaille sur des projets mêlant développement, data, automatisation et IA appliquée.</p>
+<p class="profile">Ce qui m’intéresse particulièrement, c’est de transformer des données brutes ou des besoins métier en solutions concrètes : pipelines, automatisations, tableaux de bord, workflows IA, extraction d’information, génération de livrables, analyse de données et outils d’aide à la décision.</p>
+<p class="profile">J’aime comprendre un besoin, structurer les données, fiabiliser les traitements, intégrer des APIs, exploiter les LLM de manière contrôlée, tester les résultats et documenter les solutions pour qu’elles soient réellement utilisables par les équipes.</p>
+</section>
+<section class="section">
+  <h2 class="section-title">COMPÉTENCES</h2>
+  <div class="skill-group">
+    <div class="skill-title">Data / Analyse</div>
+    <div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">PostgreSQL</span><span class="chip">MariaDB / MySQL</span><span class="chip">Analyse de données</span><span class="chip">Nettoyage de données</span><span class="chip">Structuration de données</span><span class="chip">Normalisation</span><span class="chip">Contrôles qualité</span><span class="chip">Détection d’anomalies</span><span class="chip">Préparation de datasets</span><span class="chip">Reporting</span><span class="chip">KPIs</span><span class="chip">Analyse de performance</span></div>
+  </div>
+<div class="skill-group">
+    <div class="skill-title">Business Intelligence / Visualisation</div>
+    <div class="chips"><span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">Tableaux de bord</span><span class="chip">Indicateurs métier</span><span class="chip">Reporting décisionnel</span><span class="chip">Visualisation de données</span><span class="chip">Aide à la décision</span><span class="chip">Excel</span><span class="chip">Tableaux croisés dynamiques</span><span class="chip">PowerPoint</span></div>
+  </div>
+<div class="skill-group">
+    <div class="skill-title">IA appliquée / LLM</div>
+    <div class="chips"><span class="chip">IA générative</span><span class="chip">LLM</span><span class="chip">Claude</span><span class="chip">ChatGPT</span><span class="chip">Copilot</span><span class="chip">Prompt engineering</span><span class="chip">Extraction d’information</span><span class="chip">Synthèse automatisée</span><span class="chip">Génération de livrables</span><span class="chip">Analyse assistée par IA</span><span class="chip">Évaluation de réponses</span><span class="chip">Détection de biais</span><span class="chip">Anonymisation de données</span><span class="chip">Workflows IA</span></div>
+  </div>
+<div class="skill-group">
+    <div class="skill-title">Automatisation / Intégration</div>
+    <div class="chips"><span class="chip">Make</span><span class="chip">n8n</span><span class="chip">APIs REST</span><span class="chip">Webhooks</span><span class="chip">JSON</span><span class="chip">Workflows automatisés</span><span class="chip">Automatisation de traitements</span><span class="chip">Synchronisation entre outils</span><span class="chip">Gestion d’erreurs</span><span class="chip">Documentation de flux</span><span class="chip">Fiabilisation de processus</span></div>
+  </div>
+<div class="skill-group">
+    <div class="skill-title">Développement</div>
+    <div class="chips"><span class="chip">Python</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">Node.js</span><span class="chip">React</span><span class="chip">Java</span><span class="chip">JavaFX</span><span class="chip">HTML/CSS</span><span class="chip">Backend</span><span class="chip">APIs REST</span><span class="chip">Git</span><span class="chip">GitLab CI</span><span class="chip">CI/CD</span><span class="chip">Docker</span><span class="chip">Bash</span><span class="chip">Linux</span></div>
+  </div>
+<div class="skill-group">
+    <div class="skill-title">Bases de données / systèmes</div>
+    <div class="chips"><span class="chip">PostgreSQL</span><span class="chip">MariaDB</span><span class="chip">MySQL</span><span class="chip">MongoDB</span><span class="chip">Firebase / Firestore</span><span class="chip">Redis</span><span class="chip">DBeaver</span><span class="chip">Linux</span><span class="chip">Docker</span></div>
+  </div>
+<div class="skill-group">
+    <div class="skill-title">Produit / Métier</div>
+    <div class="chips"><span class="chip">Recueil de besoin</span><span class="chip">Reformulation technique</span><span class="chip">Documentation fonctionnelle</span><span class="chip">Supports de prise en main</span><span class="chip">Tests utilisateurs</span><span class="chip">Amélioration continue</span><span class="chip">Vulgarisation technique</span><span class="chip">Communication métier / tech</span><span class="chip">Suivi de livrables</span></div>
+  </div>
+</section>
+<section class="section">
+  <h2 class="section-title">Soft skills</h2>
+  <p class="compact-list">Autonomie • Rigueur • Curiosité • Esprit d’analyse • Communication • Pédagogie • Débrouillardise • Force de proposition • Apprentissage rapide • Sens du concret</p>
+</section>
+<section class="section">
+  <h2 class="section-title">LANGUES</h2>
+  <ul class="compact-list">
+    <li><strong>Français :</strong> courant</li><li><strong>Anglais :</strong> bilingue — TOEIC 895</li><li><strong>Arabe :</strong> bilingue</li><li><strong>Italien :</strong> courant</li><li><strong>Espagnol :</strong> intermédiaire</li>
+  </ul>
+</section>
+  </aside>
+  <main class="main">
+    <section class="section">
+  <h2 class="section-title">EXPÉRIENCES PROFESSIONNELLES</h2>
+  <article class="xp">
+    <div class="xp-head">
+      <div>
+        <div class="xp-role">Alternant Full Stack, Data &amp; Automatisation IA</div>
+        <div class="xp-company">Symbolist — Lille</div>
+      </div>
+      <div class="xp-date">Depuis juillet 2025</div>
+    </div>
+    <div class="xp-context">Petite équipe tech, environnement agile, projets multi-clients, avec de forts enjeux de livraison, de fiabilité et d’usage réel.</div>
+    <ul class="compact-list"><li>Développement et maintenance de solutions utilisées en production</li><li>Analyse de besoins métiers et transformation en solutions concrètes</li><li>Structuration, nettoyage, normalisation et exploitation de données</li><li>Automatisation de traitements, imports, extractions et synchronisations entre outils</li><li>Mise en place de workflows automatisés avec intégrations API, contrôles et amélioration continue</li><li>Utilisation de LLM pour l’extraction, la structuration, la synthèse, la génération de livrables et l’analyse de données</li><li>Rédaction et optimisation de prompts selon les contraintes métier et les résultats observés</li><li>Tests des réponses IA, analyse des limites, détection de biais et amélioration itérative</li><li>Création de reportings, indicateurs et tableaux de bord pour le pilotage</li><li>Documentation technique et fonctionnelle des solutions livrées</li><li>Communication avec des interlocuteurs non techniques pour comprendre les besoins, reformuler les demandes et adapter les livrables</li></ul>
+    <div class="impact"><strong>Réalisation marquante — Data &amp; IA prédictive :</strong> Participation à un projet client dans le secteur pharma autour de l’analyse prédictive avec LLM sur un jeu de données précis : extraction, normalisation, formalisation des données, puis analyse des résultats. Après identification d’un risque de biais dans les réponses, l’approche a été retravaillée avec anonymisation des données afin de rendre l’évaluation plus objective et fiable.</div>
+<div class="impact"><strong>Réalisation marquante — IA générative &amp; contenu SEO :</strong> Participation à la mise en place de workflows de génération de contenus SEO assistée par IA à partir de mots-clés précis, en conservant les éléments de marque, le ton éditorial, les contraintes client et un rendu naturel. Travail sur la structuration des entrées, le prompt engineering, le contrôle qualité des sorties et l’amélioration continue des prompts.</div>
+<div class="impact"><strong>Réalisation marquante — Automatisation &amp; reporting :</strong> Mise en place d’un système d’automatisation et de reporting à partir de fichiers volumineux, permettant de réduire fortement le temps de production des livrables, de fiabiliser les traitements et de rendre les données plus exploitables pour le pilotage.</div>
+  </article>
+<article class="xp">
+    <div class="xp-head">
+      <div>
+        <div class="xp-role">Stagiaire Data &amp; Business Intelligence</div>
+        <div class="xp-company">Europe Loisirs — Arnage</div>
+      </div>
+      <div class="xp-date">Avril 2025 – Juin 2025</div>
+    </div>
+    <div class="xp-context">Stage BI réalisé dans un contexte PME, avec un ERP ancien, des données volumineuses et un besoin fort de pilotage.</div>
+    <ul class="compact-list"><li>Analyse des besoins métier en lien direct avec la direction</li><li>Exploration, structuration et fiabilisation de données issues d’un ERP Dolibarr / MariaDB</li><li>Connexion à la base de données via DBeaver</li><li>Création et exploitation de vues SQL pour préparer les données au reporting</li><li>Nettoyage et préparation de données pour rendre l’analyse plus robuste</li><li>Création d’indicateurs de suivi de l’activité, des ventes, de la trésorerie, des encours et des stocks</li><li>Conception d’un système de reporting décisionnel</li><li>Création de tableaux de bord Power BI utilisés quotidiennement pour suivre l’activité, comparer les performances et orienter les décisions</li><li>Travail sur des mesures DAX et des tables de dimensions</li><li>Documentation et restitution des résultats auprès d’utilisateurs non techniques</li><li>Projet mené de bout en bout avec une forte autonomie</li></ul>
+    <div class="impact"><strong>Résultat :</strong> Outil toujours utilisé aujourd’hui par l’entreprise pour piloter son activité, analyser ses performances et appuyer ses décisions.</div>
+  </article>
+<article class="xp">
+    <div class="xp-head">
+      <div>
+        <div class="xp-role">Projet personnel e-commerce / opérations digitales</div>
+        <div class="xp-company">Projet personnel</div>
+      </div>
+      <div class="xp-date">Depuis 2020</div>
+    </div>
+    
+    <ul class="compact-list"><li>Création et gestion de boutiques et sites web</li><li>Suivi de performance, analyse des résultats et ajustements opérationnels</li><li>Analyse d’indicateurs business : acquisition, conversion, comportement utilisateur, rétention</li><li>Travail sur le SEO, les contenus, les pages de vente, les messages marketing et le positionnement</li><li>Expérience concrète des enjeux de relation client, tunnel de conversion et optimisation</li><li>Apprentissage autonome autour du digital, de la data, de l’automatisation et de l’IA</li><li>Développement d’un esprit entrepreneurial, orienté test, mesure et amélioration continue</li></ul>
+    
+  </article>
+</section>
+<section class="section">
+  <h2 class="section-title">PROJETS ACADÉMIQUES</h2>
+  <ul class="compact-list">
+    <li>Modélisation d’une base de données relationnelle</li><li>Création de tables, relations et contraintes</li><li>Requêtes SQL pour exploiter et analyser les données</li><li>Travail sur la structuration, la cohérence et la manipulation de données</li><li>Développement d’une application avec interface graphique</li><li>Modélisation d’un problème d’optimisation</li><li>Travail algorithmique et logique métier</li><li>Conception d’une solution exploitable par l’utilisateur</li><li>Développement en équipe selon une méthode agile</li><li>Organisation en sprints, répartition des tâches et revues régulières</li><li>Développement Java orienté objet</li><li>Travail sur la collaboration, les tests et l’amélioration progressive</li>
+  </ul>
+</section>
+<section class="section">
+  <h2 class="section-title">FORMATION</h2>
+  <article class="xp">
+    <div class="xp-head">
+      <div class="xp-role">Admission en école d’ingénieur / Master spécialisé en Data &amp; IA</div>
+      <div class="xp-date">rentrée 2026</div>
+    </div>
+    <div class="xp-company">Admis en formation spécialisée en Data &amp; Intelligence Artificielle, notamment à l’Université Catholique de Lille ainsi qu’à l’EFREI Paris dans le parcours Big Data &amp; Machine Learning. Les deux parcours ayant un rythme d’alternance de 2j école / 3j entreprise.</div>
+    
+    
+  </article>
+<article class="xp">
+    <div class="xp-head">
+      <div class="xp-role">BUT Informatique</div>
+      
+    </div>
+    <div class="xp-company">IUT de Villeneuve-d’Ascq — Université de Lille</div>
+    <div class="xp-context">2023 → 2026</div>
+    
+  </article>
+<article class="xp">
+    <div class="xp-head">
+      <div class="xp-role">Baccalauréat STI2D</div>
+      
+    </div>
+    <div class="xp-company">Lycée Touchard-Washington — Le Mans</div>
+    <div class="xp-context">2021 → 2023 — Mention Assez Bien</div>
+    
+  </article>
+</section>
+<section class="section">
+  <h2 class="section-title">CERTIFICATIONS</h2>
+  <ul class="compact-list">
+    <li>Certifications Make.com</li><li>Certification Make Partner niveau 4</li><li>Préparation du niveau 5 Expert Make</li>
+  </ul>
+</section>
+  </main>
+</section>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
