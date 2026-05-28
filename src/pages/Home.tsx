@@ -130,9 +130,7 @@ export default function Home() {
                 lineHeight: 1.4,
                 letterSpacing: '-0.01em',
               }}>
-                Apprenti en <span style={{ color: 'var(--color-text)' }}>Data</span>, en
-                <span className="gradient-text">automatisation</span> et en
-                <span style={{ color: 'var(--color-text)' }}>IA appliquée</span>.
+                Apprenti en <span style={{ color: 'var(--color-text)' }}>Data</span>, en <span className="gradient-text">automatisation</span> et en <span style={{ color: 'var(--color-text)' }}>IA appliquée</span>.
               </p>
 
               <p style={{
