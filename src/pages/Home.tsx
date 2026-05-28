@@ -325,7 +325,7 @@ export default function Home() {
             gap: '40px',
           }}>
             {[
-              { title: "Données & Décisionnel", items: ["SQL (PostgreSQL, MySQL)", "Power BI & DAX", "Modélisation relationnelle", "Migration de bases", "Nettoyage & Restitution"] },
+              { title: "Données & Décisionnel", items: ["SQL (PostgreSQL, MySQL)", "Power BI", "Modélisation relationnelle", "Migration de bases", "Nettoyage & Restitution"] },
               { title: "Flux & Automatisation", items: ["Make / Integromat", "n8n Integration", "Interconnexions APIs", "Gestion des exceptions & logs", "Développement Node.js / TS"] },
               { title: "Intelligence Artificielle", items: ["Prompt engineering de précision", "Architectures RAG", "Structuration de documents", "Anonymisation de données", "Intégration d'APIs LLM"] }
             ].map((col, idx) => (

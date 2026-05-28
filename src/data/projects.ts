@@ -98,11 +98,11 @@ export const projects: Project[] = [
       "Exploration et compréhension des tables Dolibarr",
       "Création de vues SQL (exercices fiscaux, encours clients, commandes, trésorerie)",
       "Calcul des indicateurs financiers et commerciaux",
-      "Création de mesures DAX dans Power BI",
+      "Création de rapports et indicateurs dans Power BI",
       "Construction des dashboards avec filtres et drill-down",
       "Recettage des données et restitution à la direction"
     ],
-    stack: ["MariaDB", "MySQL", "SQL", "DBeaver", "Power BI", "DAX", "Dolibarr"],
+    stack: ["MariaDB", "MySQL", "SQL", "DBeaver", "Power BI", "Dolibarr"],
     impact: [
       "Reporting consolidé accessible directement par la direction",
       "Remplacement des fichiers Excel manuels",

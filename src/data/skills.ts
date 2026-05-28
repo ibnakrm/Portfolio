@@ -11,7 +11,7 @@ export const skillCategories: SkillCategory[] = [
     label: "Data & BI",
     icon: "BarChart3",
     skills: [
-      "SQL", "PostgreSQL", "MariaDB / MySQL", "Power BI", "DAX",
+      "SQL", "PostgreSQL", "MariaDB / MySQL", "Power BI",
       "ClicData", "Coupler", "Data cleaning", "Data modeling",
       "Reporting", "KPIs", "Recette de données"
     ]
@@ -114,19 +114,19 @@ export const hardSkillsDetails: HardSkillDetail[] = [
     ]
   },
   {
-    title: "Power BI / DAX",
+    title: "Power BI",
     level: "intermédiaire confirmé",
     context: "J’ai utilisé Power BI durant mon stage chez Europe Loisirs pour construire des dashboards à partir de données ERP. J’ai travaillé sur la préparation de données, la création d’indicateurs, la visualisation et le recettage.",
     todo: [
       "connecter des sources de données ;",
       "préparer des tables pour le reporting ;",
       "créer des dashboards ;",
-      "construire des mesures DAX simples à intermédiaires ;",
+      "construire des mesures et indicateurs simples à intermédiaires ;",
       "organiser les visuels selon un besoin métier ;",
       "vérifier la cohérence des indicateurs."
     ],
     axes: [
-      "DAX avancé ;",
+      "formules et modélisation Power BI avancées ;",
       "modélisation complexe ;",
       "optimisation de rapports ;",
       "automatisation des flux d’actualisation."

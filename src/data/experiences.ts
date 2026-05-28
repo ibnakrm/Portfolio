@@ -51,11 +51,11 @@ export const experiences: Experience[] = [
       "Exploration et compréhension des données ERP Dolibarr",
       "Création de vues SQL (ventes, commandes, encours, trésorerie, stocks)",
       "Nettoyage, structuration et fiabilisation des données",
-      "Création de mesures DAX et dashboards Power BI",
+      "Création de tableaux de bord Power BI",
       "Recettage des données et des indicateurs",
       "Documentation et restitution à la direction"
     ],
-    stack: ["MariaDB", "MySQL", "SQL", "DBeaver", "Power BI", "DAX", "Dolibarr"],
+    stack: ["MariaDB", "MySQL", "SQL", "DBeaver", "Power BI", "Dolibarr"],
     impact: "Le projet a permis de produire un reporting fiable pour suivre les ventes, commandes, encours, stocks, trésorerie et indicateurs financiers, remplaçant des fichiers Excel épars.",
     type: 'pro',
     autonomyAndInteractions: "Lors de mon stage chez Europe Loisirs, j'ai travaillé sur un projet BI en lien direct avec des besoins métier. L'objectif était de remplacer des fichiers Excel et des rapports partiels par des dashboards Power BI exploitables à partir des données de l'ERP Dolibarr.\n\nJ'ai dû comprendre le fonctionnement de l'entreprise, explorer la base MariaDB, analyser les tables, créer des vues SQL et construire des indicateurs utiles pour la direction. Cette mission m'a demandé de l'autonomie, car il fallait comprendre des données existantes, parfois complexes, et les transformer en informations lisibles.\n\nLes interactions avec les utilisateurs métier ont été importantes. Il ne suffisait pas de produire un dashboard techniquement correct : il fallait aussi que les indicateurs soient compréhensibles, cohérents et utiles pour le pilotage de l'activité.\n\nCe stage m'a appris que la data ne consiste pas seulement à faire des requêtes ou des graphiques. Il faut comprendre le contexte métier, vérifier la fiabilité des données et s'assurer que le résultat final répond réellement au besoin."
