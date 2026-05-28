@@ -95,7 +95,7 @@ export interface HardSkillDetail {
 export const hardSkillsDetails: HardSkillDetail[] = [
   {
     title: "SQL / MariaDB / PostgreSQL",
-    level: "intermédiaire",
+    level: "intermédiaire confirmé",
     context: "J’ai utilisé SQL dans plusieurs contextes : projets académiques, stage BI chez Europe Loisirs et sujets liés à Supabase/PostgreSQL. Chez Europe Loisirs, j’ai travaillé sur une base MariaDB liée à l’ERP Dolibarr, avec création de vues SQL, structuration de données et préparation d’indicateurs pour Power BI.",
     todo: [
       "explorer une base relationnelle ;",
@@ -115,7 +115,7 @@ export const hardSkillsDetails: HardSkillDetail[] = [
   },
   {
     title: "Power BI / DAX",
-    level: "intermédiaire",
+    level: "intermédiaire confirmé",
     context: "J’ai utilisé Power BI durant mon stage chez Europe Loisirs pour construire des dashboards à partir de données ERP. J’ai travaillé sur la préparation de données, la création d’indicateurs, la visualisation et le recettage.",
     todo: [
       "connecter des sources de données ;",
@@ -134,7 +134,7 @@ export const hardSkillsDetails: HardSkillDetail[] = [
   },
   {
     title: "ClicData / Coupler / Reporting",
-    level: "intermédiaire",
+    level: "intermédiaire confirmé",
     context: "Chez Symbolist.ai, j’ai travaillé sur des dashboards clients avec ClicData, notamment sur des données SEO, Google Analytics et Google Ads. J’ai aussi participé à l’analyse des limites de ClicData et à la réflexion autour d’une transition vers Coupler.",
     todo: [
       "connecter des sources ;",
@@ -155,7 +155,7 @@ export const hardSkillsDetails: HardSkillDetail[] = [
   },
   {
     title: "Make",
-    level: "avancé junior / intermédiaire confirmé",
+    level: "avancé",
     context: "Make est l’un des outils que j’ai le plus utilisés en alternance. J’ai conçu et maintenu des scénarios pour connecter des outils, automatiser des processus, structurer des données et intégrer de l’IA dans des workflows.",
     todo: [
       "créer des scénarios multi-étapes ;",
@@ -177,7 +177,7 @@ export const hardSkillsDetails: HardSkillDetail[] = [
   },
   {
     title: "APIs / Webhooks / JSON",
-    level: "intermédiaire",
+    level: "avancé",
     context: "J’ai utilisé des APIs dans plusieurs contextes : Taleez, Firebase, Weenav, outils SaaS, Webflow, automatisations Make et intégrations front-end.",
     todo: [
       "lire une documentation API ;",
@@ -197,7 +197,7 @@ export const hardSkillsDetails: HardSkillDetail[] = [
   },
   {
     title: "LLM / Prompt engineering / RAG",
-    level: "intermédiaire",
+    level: "avancé",
     context: "J’ai utilisé les LLM dans des cas concrets : génération de contenu SEO, extraction d’informations, structuration de données, création de prompts, workflows IA, base de connaissance et projets RAG.",
     todo: [
       "rédiger des prompts structurés ;",
