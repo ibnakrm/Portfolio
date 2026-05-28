@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+
+@theme {
+  --color-bg: #0f1117;
+  --color-surface: #161b27;
+  --color-surface-2: #1e2535;
+  --color-border: rgba(255, 255, 255, 0.07);
+  --color-border-hover: rgba(255, 255, 255, 0.15);
+
+  --color-accent: #22c55e;
+  --color-accent-2: #16a34a;
+  --color-accent-glow: rgba(34, 197, 94, 0.15);
+  --color-accent-muted: rgba(34, 197, 94, 0.12);
+
+  --color-text: #f1f5f9;
+  --color-text-2: #94a3b8;
+  --color-text-3: #64748b;
+
+  --font-family-sans: 'Inter', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family-sans);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: #000;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* Accent glow text utility */
+.text-accent {
+  color: var(--color-accent);
+}
+
+.bg-surface {
+  background-color: var(--color-surface);
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #22c55e 0%, #4ade80 50%, #86efac 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card base */
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(34, 197, 94, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Tag / badge */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  background-color: rgba(34, 197, 94, 0.1);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  white-space: nowrap;
+}
+
+.tag-gray {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: var(--color-text-2);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.tag-amber {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: #fbbf24;
+  border-color: rgba(245, 158, 11, 0.2);
+}
+
+/* Button primary */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background-color: var(--color-accent);
+  color: #000;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+.btn-primary:hover {
+  background-color: #4ade80;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(34, 197, 94, 0.35);
+}
+
+/* Button outline */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background-color: transparent;
+  color: var(--color-text);
+  text-decoration: none;
+  border: 1px solid var(--color-border-hover);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
+}
+.btn-outline:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background-color: var(--color-accent-muted);
+  transform: translateY(-1px);
+}
+
+/* Section spacing */
+.section {
+  padding: 80px 0;
+}
+.section-sm {
+  padding: 48px 0;
+}
+
+/* Container */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Timeline line */
+.timeline-line {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--color-border), transparent);
+}
+
+/* Skill category header */
+.skill-category-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+}
+
+/* Filter active state */
+.filter-btn {
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-2);
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+.filter-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+.filter-btn.active {
+  background-color: var(--color-accent);
+  color: #000;
+  border-color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+/* Dot pulse */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.dot-pulse {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* --- CAROUSEL STYLES --- */
+
+/* Carousel Wrapper */
+.carousel-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Track holding the slides */
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 12px 4px; /* small padding so box-shadows/borders don't get clipped */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Opera */
+}
+
+/* Carousel Item */
+.carousel-item {
+  scroll-snap-align: start;
+  flex: 0 0 100%; /* 1 card visible on mobile */
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 640px) {
+  .carousel-item {
+    flex: 0 0 calc(50% - 10px); /* 2 cards visible on tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel-item {
+    flex: 0 0 calc(33.333% - 13.333px); /* 3 cards visible on desktop */
+  }
+}
+
+/* Carousel Navigation Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: rgba(22, 27, 39, 0.85);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-btn:hover {
+  background-color: var(--color-accent-muted);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 4px 16px rgba(34, 197, 94, 0.2);
+}
+
+.carousel-btn.prev {
+  left: -23px;
+}
+
+.carousel-btn.next {
+  right: -23px;
+}
+
+@media (max-width: 768px) {
+  .carousel-btn {
+    display: none; /* Hide arrows on touch devices where swipe is native and easy */
+  }
+}
+
+/* Carousel Pagination Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-text-3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+}
+
+.carousel-dot:hover {
+  background-color: var(--color-text-2);
+}
+
+.carousel-dot.active {
+  background-color: var(--color-accent);
+  transform: scale(1.25);
+  width: 20px; /* pill shape for active dot */
+  border-radius: 4px;
+}
+
+/* Accordion details styling for Skills page */
+details.skill-detail {
+  background-color: rgba(22, 27, 39, 0.4);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  margin-bottom: 12px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+details.skill-detail:hover {
+  border-color: var(--color-border-hover);
+}
+
+details.skill-detail[open] {
+  border-color: rgba(34, 197, 94, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(34, 197, 94, 0.05);
+}
+
+details.skill-detail summary {
+  padding: 16px 20px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+details.skill-detail summary::-webkit-details-marker {
+  display: none;
+}
+
+details.skill-detail .details-content {
+  padding: 20px;
+  border-top: 1px solid var(--color-border);
+  background-color: rgba(15, 17, 23, 0.2);
+}
+
+
