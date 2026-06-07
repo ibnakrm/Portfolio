@@ -155,7 +155,7 @@ export default function Contact() {
               </a>
               <a
                 id="contact-download-cv"
-                href="/cv.html"
+                href="/documents/cv_othemane_khachnane.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
