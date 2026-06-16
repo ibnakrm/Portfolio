@@ -109,9 +109,9 @@ export default function About() {
                   purement scolaire du développement pour travailler sur des sujets réels.
                 </p>
                 <p style={{ margin: 0 }}>
-                  Automatisations Make, intégrations API, dashboards BI, migration de données, RAG,
-                  extraction massive de documents, Webflow, Firebase, Supabase, outils BI — j'ai touché
-                  à l'ensemble de la chaîne d'un système digital.
+                  Automatisation, data, BI, IA appliquée, RAG, scraping, Webflow, Firebase ou Supabase.
+                  J’ai touché à plusieurs briques d’un système digital. Ce qui m’intéresse surtout, 
+                  c’est de les relier intelligemment pour répondre à un vrai besoin métier.
                 </p>
                 <p style={{ margin: 0 }}>
                   Ce qui me motive : <strong style={{ color: 'var(--color-text)' }}>apprendre vite, comprendre un besoin métier, construire une

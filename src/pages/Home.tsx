@@ -352,7 +352,7 @@ export default function Home() {
             Lancer un projet ou échanger ?
           </h2>
           <p style={{ color: 'var(--color-text-2)', margin: '0 auto 32px', lineHeight: 1.6, fontSize: '0.925rem' }}>
-            Je réponds sous 24h pour discuter de vos besoins en traitement de données, création d'automates métier ou intégration d'IA.
+            Je réponds sous 24h pour discuter de vos besoins en traitement de données, création d'automatisation métier ou intégration d'IA.
           </p>
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a

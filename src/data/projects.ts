@@ -56,8 +56,8 @@ export const projects: Project[] = [
     slug: "dashboards-clicdata-coupler",
     title: "Dashboards BI & migration vers Coupler",
     shortDescription: "Création et correction de dashboards marketing/SEO sur ClicData, analyse des limites de l'outil et participation à la transition vers Coupler.",
-    context: "Chez Symbolist.ai, ClicData était utilisé pour créer des dashboards clients autour du SEO, Google Analytics, Google Ads et du reporting marketing.",
-    problem: "L'outil présentait des limites importantes : bugs récurrents, complexité de maintenance, coûts élevés, et des écarts de données inexpliqués entre les sources connectées.",
+    context: "Chez Symbolist.ai, j’utilisais ClicData, un outil d’ETL et de reporting, pour concevoir des dashboards clients dédiés au suivi des performances marketing. Ces tableaux de bord permettaient de centraliser et visualiser des données issues de différentes sources, notamment les campagnes marketing, le SEO, Google Analytics, Google Ads ainsi que le reporting global.",
+    problem: "ClicData présentait des limites : bugs récurrents, complexité de maintenance, coûts élevés, et des écarts de données inexpliqués entre les sources connectées.",
     solution: "Travailler sur les dashboards existants, corriger les anomalies, analyser les écarts de données et contribuer à la réflexion autour d'une migration vers une architecture plus fiable avec Coupler.",
     actions: [
       "Connexion de sources de données (Google Analytics, Search Console, Google Ads)",
