@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>VivaTech Portfolio QR Code</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet" />
+
+    <style>
+      :root {
+        --color-bg: #07090e;
+        --color-surface: rgba(13, 17, 28, 0.7);
+        --color-accent: #22c55e; /* Emerald Green */
+        --color-accent-blue: #0ea5e9; /* Cyan */
+        --color-text: #f8fafc;
+        --color-text-muted: #94a3b8;
+        --font-tech: "Orbitron", sans-serif;
+        --font-sans: "Space Grotesk", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html, body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        font-family: var(--font-sans);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      /* Cybernetic Background grid */
+      body::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: 
+          linear-gradient(rgba(34, 197, 94, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(34, 197, 94, 0.03) 1px, transparent 1px);
+        background-size: 30px 30px;
+        background-position: center;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      /* Glowing radial spots */
+      .glow-spot-1 {
+        position: absolute;
+        top: 20%;
+        left: -10%;
+        width: 60%;
+        height: 40%;
+        background: radial-gradient(circle, rgba(34, 197, 94, 0.15) 0%, transparent 70%);
+        filter: blur(50px);
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .glow-spot-2 {
+        position: absolute;
+        bottom: 10%;
+        right: -10%;
+        width: 70%;
+        height: 50%;
+        background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
+        filter: blur(60px);
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      /* Mobile Frame Mockup (Only centered on desktop, full screen on mobile) */
+      .phone-wallpaper {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        max-width: 440px;
+        max-height: 900px;
+        background: radial-gradient(circle at 50% 30%, #0d1527 0%, #06080c 100%);
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 60px 30px 50px;
+        z-index: 10;
+        overflow: hidden;
+      }
+
+      @media (min-width: 480px) {
+        .phone-wallpaper {
+          border-radius: 36px;
+          border: 2px solid rgba(34, 197, 94, 0.2);
+          box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(34, 197, 94, 0.05);
+        }
+      }
+
+      /* Decorative HUD Corner borders */
+      .hud-bracket {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        border-color: var(--color-accent);
+        border-style: solid;
+        pointer-events: none;
+        z-index: 12;
+      }
+
+      .top-left {
+        top: 25px;
+        left: 25px;
+        border-width: 2px 0 0 2px;
+        border-top-left-radius: 8px;
+      }
+
+      .top-right {
+        top: 25px;
+        right: 25px;
+        border-width: 2px 2px 0 0;
+        border-top-right-radius: 8px;
+      }
+
+      .bottom-left {
+        bottom: 25px;
+        left: 25px;
+        border-width: 0 0 2px 2px;
+        border-bottom-left-radius: 8px;
+      }
+
+      .bottom-right {
+        bottom: 25px;
+        right: 25px;
+        border-width: 0 2px 2px 0;
+        border-bottom-right-radius: 8px;
+      }
+
+      /* Tech lines */
+      .tech-line {
+        position: absolute;
+        background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.4), transparent);
+        height: 1px;
+        width: 80%;
+        left: 10%;
+        z-index: 5;
+      }
+
+      .tech-line-top {
+        top: 45px;
+      }
+
+      .tech-line-bottom {
+        bottom: 45px;
+      }
+
+      /* Header Info */
+      .header-info {
+        text-align: center;
+        z-index: 15;
+        margin-top: 10px;
+      }
+
+      .event-tag {
+        font-family: var(--font-tech);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.25em;
+        color: var(--color-accent);
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        display: inline-block;
+        border: 1px solid rgba(34, 197, 94, 0.3);
+        padding: 4px 12px;
+        border-radius: 4px;
+        background: rgba(34, 197, 94, 0.05);
+        box-shadow: 0 0 10px rgba(34, 197, 94, 0.1);
+      }
+
+      .title-name {
+        font-size: 2.1rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+        background: linear-gradient(135deg, #ffffff 50%, #cbd5e1 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .subtitle-role {
+        font-size: 0.95rem;
+        color: var(--color-text-muted);
+        letter-spacing: 0.05em;
+        font-weight: 500;
+      }
+
+      /* Central QR Code Block */
+      .qr-block-container {
+        position: relative;
+        z-index: 15;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 0;
+      }
+
+      /* Outer glowing ring */
+      .qr-glow-ring {
+        position: absolute;
+        inset: -15px;
+        border-radius: 30px;
+        background: radial-gradient(circle, rgba(34, 197, 94, 0.15) 0%, transparent 70%);
+        z-index: -1;
+        animation: pulse-glow 3s infinite ease-in-out;
+      }
+
+      .qr-frame {
+        background: rgba(15, 23, 42, 0.8);
+        border: 2px solid rgba(34, 197, 94, 0.35);
+        border-radius: 24px;
+        padding: 24px;
+        box-shadow: 
+          0 20px 50px rgba(0, 0, 0, 0.5), 
+          inset 0 0 15px rgba(34, 197, 94, 0.05);
+        position: relative;
+      }
+
+      .qr-frame::before {
+        content: "";
+        position: absolute;
+        inset: 4px;
+        border: 1px dashed rgba(34, 197, 94, 0.2);
+        border-radius: 18px;
+        pointer-events: none;
+      }
+
+      /* Actual QR Image */
+      .qr-image-wrapper {
+        width: 180px;
+        height: 180px;
+        background: #ffffff; /* Must be solid white for absolute scannability */
+        padding: 10px;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        position: relative;
+      }
+
+      .qr-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      /* Scanner Laser Effect */
+      .scanner-line {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+        box-shadow: 0 0 8px var(--color-accent);
+        z-index: 10;
+        animation: scan 4s infinite linear;
+        pointer-events: none;
+      }
+
+      /* Footer Info */
+      .footer-info {
+        text-align: center;
+        z-index: 15;
+        width: 100%;
+      }
+
+      .scan-cta {
+        font-family: var(--font-tech);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        color: var(--color-text-muted);
+        text-transform: uppercase;
+        margin-bottom: 24px;
+        animation: text-pulse 2s infinite ease-in-out;
+      }
+
+      .scan-cta span {
+        color: var(--color-accent);
+      }
+
+      /* Tech details / stats */
+      .tech-stats {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 16px;
+      }
+
+      .stat-item {
+        font-size: 0.72rem;
+        font-family: var(--font-tech);
+        color: var(--color-text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .stat-item strong {
+        color: var(--color-accent-blue);
+      }
+
+      /* Animations */
+      @keyframes scan {
+        0% {
+          top: 0%;
+        }
+        50% {
+          top: 100%;
+        }
+        100% {
+          top: 0%;
+        }
+      }
+
+      @keyframes pulse-glow {
+        0%, 100% {
+          transform: scale(1);
+          opacity: 0.5;
+        }
+        50% {
+          transform: scale(1.15);
+          opacity: 0.8;
+        }
+      }
+
+      @keyframes text-pulse {
+        0%, 100% {
+          opacity: 0.6;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow-spot-1"></div>
+    <div class="glow-spot-2"></div>
+
+    <div class="phone-wallpaper">
+      <!-- HUD brackets -->
+      <div class="hud-bracket top-left"></div>
+      <div class="hud-bracket top-right"></div>
+      <div class="hud-bracket bottom-left"></div>
+      <div class="hud-bracket bottom-right"></div>
+
+      <!-- Top design tech line -->
+      <div class="tech-line tech-line-top"></div>
+
+      <!-- Header -->
+      <header class="header-info">
+        <span class="event-tag">VIVATECH 2026</span>
+        <h1 class="title-name">Othemane</h1>
+        <p class="subtitle-role">Data • Automatisation • IA</p>
+      </header>
+
+      <!-- QR Code Block -->
+      <div class="qr-block-container">
+        <div class="qr-glow-ring"></div>
+        <div class="qr-frame">
+          <div class="qr-image-wrapper">
+            <div class="scanner-line"></div>
+            <img src="/images/qrcode.png" alt="Othemane Khachnane Portfolio QR Code" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer-info">
+        <p class="scan-cta">◄ SCANNEZ POUR <span>MON PORTFOLIO</span> ►</p>
+        
+        <div class="tech-stats">
+          <span class="stat-item">SYS: <strong>LIVE</strong></span>
+          <span class="stat-item">LOC: <strong>LILLE / PARIS</strong></span>
+          <span class="stat-item">ROLE: <strong>ENGINEER</strong></span>
+        </div>
+      </footer>
+
+      <!-- Bottom design tech line -->
+      <div class="tech-line tech-line-bottom"></div>
+    </div>
+  </body>
+</html>
