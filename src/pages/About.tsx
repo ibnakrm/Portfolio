@@ -71,7 +71,7 @@ export default function About() {
               {/* Buttons */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '24px' }}>
                 <a
-                  href="/documents/cv_othemane_khachnane.pdf"
+                  href="/documents/cv-othemane-khachnane.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary"

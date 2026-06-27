@@ -150,7 +150,7 @@ export default function Home() {
                 </Link>
                 <a
                   id="cta-cv"
-                  href="/documents/cv_othemane_khachnane.pdf"
+                  href="/documents/cv-othemane-khachnane.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-outline"

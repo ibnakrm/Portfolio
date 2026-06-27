@@ -86,7 +86,7 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href="/documents/cv_othemane_khachnane.pdf"
+            href="/documents/cv-othemane-khachnane.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"
@@ -142,7 +142,7 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href="/documents/cv_othemane_khachnane.pdf"
+            href="/documents/cv-othemane-khachnane.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"
